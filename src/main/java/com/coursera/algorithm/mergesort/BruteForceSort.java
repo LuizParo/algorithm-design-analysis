@@ -10,10 +10,17 @@ public class BruteForceSort {
             for (int j = i + 1; j < size; j++) {
                 if(array[i].compareTo(array[j]) > 0) {
                     ++inversions;
+                    swap(array, i, j);
                 }
             }
         }
         
         return inversions;
+    }
+
+    private static void swap(Comparable<?>[] array, int from, int to) {
+        Comparable<?> elementFrom = array[from];
+        array[from] = array[to];
+        array[to] = elementFrom;
     }
 }

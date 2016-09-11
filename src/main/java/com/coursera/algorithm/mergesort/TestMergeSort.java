@@ -7,14 +7,14 @@ public class TestMergeSort {
         Comparable<Integer>[] array = FileLoader.loadArrayOfIntegersFromFile("IntegerArray.txt");
         
         long begin = System.currentTimeMillis();
-        //long count = BruteForceSort.sort(array, array.length); // ~ 38 seconds
-        long count = MergeSort.sort(array, 0, array.length);     // ~ 3,5 seconds
+        //long inversions = BruteForceSort.sort(array, array.length); // ~ 87 seconds
+        long inversions = MergeSort.sort(array, 0, array.length);   // ~ 3,5 seconds
         long end = System.currentTimeMillis();
         
         for (Comparable<?> comparable : array) {
             System.out.println(comparable);
         }
         System.out.println("\nSpent time to sort: " + (end - begin) / 1000.0);
-        System.out.println("Number of inversions: " + count); // 2407905288
+        System.out.println("Number of inversions: " + inversions); // 2407905288
     }
 }
